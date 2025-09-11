@@ -17,13 +17,14 @@ type UserData = {
 };
 
 const Layout = ({ children, sideBar }: LayoutProps) => {
+  const api_url = import.meta.env.VITE_API_KEY;
   const [darkMode, setDarkMode] = useState(false);
   const [userData, setUserData] = useState<UserData | null>(null);
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/v1/users/current-user", {
+        const response = await axios.get(`${api_url}users/current-user`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
             "Content-Type": "application/json",

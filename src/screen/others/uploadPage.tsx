@@ -3,6 +3,7 @@ import axios from "axios";
 import Layout from "../../Layout/Layout";
 
 const UploadPage = () => {
+  const api_url = import.meta.env.VITE_API_KEY;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [videoFile, setVideoFile] = useState<File | null>(null);
@@ -44,7 +45,7 @@ const UploadPage = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:3000/api/v1/videos/", formData, {
+      const res = await axios.post(`${api_url}videos/`, formData, {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem("token")}`,
           "Content-Type": "multipart/form-data"

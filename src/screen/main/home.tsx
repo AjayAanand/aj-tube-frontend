@@ -4,12 +4,13 @@ import axios from "axios";
 import Layout from "../../Layout/Layout";
 
 const Home = () => {
+  const api_url = import.meta.env.VITE_API_KEY;
   const [AllVideoData, setAllVideoData] = useState<any[]>([]);
 
   useEffect(() => {
     const getAllVideos = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/v1/videos/", {
+        const response = await axios.get(`${api_url}videos/`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
             "Content-Type": "application/json",

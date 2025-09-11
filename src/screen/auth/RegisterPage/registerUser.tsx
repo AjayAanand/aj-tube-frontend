@@ -3,6 +3,7 @@ import "./registerPage.css";
 import axios from "axios";
 
 export default function RegisterPage() {
+  const api_url = import.meta.env.VITE_API_KEY;
   const [form, setForm] = useState({
     fullName: "",
     email: "",
@@ -37,7 +38,7 @@ export default function RegisterPage() {
       if (form.coverImage) formData.append("coverImage", form.coverImage);
 
       const response = await axios.post(
-        "http://localhost:3000/api/v1/users/register",
+        `${api_url}users/register`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

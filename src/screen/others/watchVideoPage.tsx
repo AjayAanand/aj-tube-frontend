@@ -37,8 +37,8 @@ type CommentType = {
 };
 
 const WatchVideoPage = () => {
-const videoId = window.location.pathname.replace("/videos/", "");
-  console.log("video", videoId);
+  const api_url = import.meta.env.VITE_API_KEY;
+  const videoId = window.location.pathname.replace("/videos/", "");
   const [video, setVideo] = useState<VideoType | null>(null);
   const [comments, setComments] = useState<CommentType[]>([]);
   const [recommended, setRecommended] = useState<VideoType[]>([]);
@@ -49,7 +49,7 @@ const videoId = window.location.pathname.replace("/videos/", "");
     const fetchVideo = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/v1/videos/${videoId}`,
+          `${api_url}videos/${videoId}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -66,7 +66,7 @@ const videoId = window.location.pathname.replace("/videos/", "");
     const fetchComments = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/v1/comments/${videoId}/comments`,
+          `${api_url}comments/${videoId}/comments`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -82,7 +82,7 @@ const videoId = window.location.pathname.replace("/videos/", "");
     const fetchRecommended = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/v1/videos/recommended/${videoId}`,
+          `${api_url}videos/recommended/${videoId}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -106,7 +106,7 @@ const videoId = window.location.pathname.replace("/videos/", "");
     if (!newComment.trim()) return;
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/v1/videos/${videoId}/comments`,
+        `${api_url}videos/${videoId}/comments`,
         { content: newComment },
         {
           headers: {

@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./loginPage.css";
 
 const Login = () => {
+  const api_url = import.meta.env.VITE_API_KEY;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -12,7 +13,7 @@ const Login = () => {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/users/login",
+        `${api_url}users/login`,
         { email, password }
       );
       const { data } = response.data;
