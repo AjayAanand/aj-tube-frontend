@@ -1,7 +1,6 @@
 // src/pages/WatchVideoPage/WatchVideoPage.tsx
 
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 import Layout from "../../Layout/Layout";
 import "./WatchVideoPage.css";
