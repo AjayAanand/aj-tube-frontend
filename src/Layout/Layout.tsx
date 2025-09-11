@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import "./Layout.css";
 import axios from "axios";
 import LogOutIcon from "../assets/logout.png";
-import AppLogo from "../assets/app-logo.png";
+import AppLogo from "../assets/logoApp.png";
 
 type LayoutProps = {
   children: ReactNode;
@@ -37,6 +37,15 @@ const Layout = ({ children, sideBar }: LayoutProps) => {
         console.error("Error fetching user data:", error);
       }
     };
+
+       const checkAuth = () => {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        window.location.href = "/login";
+      }
+    };
+    
+    checkAuth();
 
     fetchUserData();
   }, []);

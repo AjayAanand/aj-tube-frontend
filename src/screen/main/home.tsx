@@ -6,7 +6,6 @@ import Layout from "../../Layout/Layout";
 const Home = () => {
   const api_url = import.meta.env.VITE_API_KEY;
   const [AllVideoData, setAllVideoData] = useState<any[]>([]);
-
   useEffect(() => {
     const getAllVideos = async () => {
       try {
@@ -21,6 +20,16 @@ const Home = () => {
         console.error("Error fetching all videos:", error);
       }
     };
+
+    const checkAuth = () => {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        window.location.href = "/login";
+      }
+    };
+    
+    checkAuth();
+
     getAllVideos();
   }, []);
 

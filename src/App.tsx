@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import "./App.css";
 import Home from './screen/main/home';
@@ -8,7 +9,6 @@ import UploadPage from './screen/others/uploadPage';
 import WatchVideoPage from './screen/others/watchVideoPage';
 
 function App() {
-  
   return (
    <>
    <BrowserRouter>
