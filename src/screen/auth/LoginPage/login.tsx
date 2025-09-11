@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import "./loginPage.css";
+import AppLogo from "../../../assets/logoApp.png";
 
 const Login = () => {
   const api_url = import.meta.env.VITE_API_KEY;
@@ -33,9 +34,12 @@ const Login = () => {
   return (
      <div className="login-container">
       <div className="login-box">
+ <div style={{textAlign:"center"}}>
+         <img src={AppLogo} alt="App Logo" className="app-logo" style={{ width: 100, height: 100, borderRadius: "50%" }} />
         <h1 className="app-title">Aj-Tube</h1>
-        <h2 className="login-title">Login</h2>
+            <h2 className="login-title">Login</h2>
 
+ </div>
         <form>
           <div className="input-group">
             <label>Email</label>

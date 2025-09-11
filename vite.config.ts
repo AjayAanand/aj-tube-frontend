@@ -14,6 +14,7 @@ export default defineConfig({
   },
    define: {
     'process.env.VITE_API_KEY': JSON.stringify(process.env.VITE_API_KEY),
+    'process.env.VITE_APP_NAME': JSON.stringify(process.env.VITE_APP_NAME),
   },
   plugins: [react()],
 })

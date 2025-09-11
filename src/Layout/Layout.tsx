@@ -2,6 +2,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import "./Layout.css";
 import axios from "axios";
 import LogOutIcon from "../assets/logout.png";
+import AppLogo from "../assets/app-logo.png";
 
 type LayoutProps = {
   children: ReactNode;
@@ -55,7 +56,10 @@ const Layout = ({ children, sideBar }: LayoutProps) => {
       <div className="navbar">
         {/* Left: Logo */}
         <button  style={{color: darkMode ? "white" : "black", fontSize:"20px", fontWeight:"bold", backgroundColor:"transparent", border:"none"}} onClick={() => window.location.href = "/"}>
-          ▶ Aj-Tube
+          <img src={AppLogo} alt="App Logo" style={{width:40, height:40, marginRight:8, verticalAlign:"middle", borderRadius:"50%"}} />
+          {
+            import.meta.env.VITE_APP_NAME || "Aj-Tube"
+          }
         </button>
         {/* Center: Search Bar */}
         <div className="nav-center">
