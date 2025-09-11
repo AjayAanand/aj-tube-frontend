@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./Home.css";
+import "./home.css";
 import axios from "axios";
 import Layout from "../../Layout/Layout";
 
