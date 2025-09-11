@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./RegisterPage.css";
+import "./registerPage.css";
 import axios from "axios";
 
 export default function RegisterPage() {

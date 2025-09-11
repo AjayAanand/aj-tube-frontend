@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Layout from "../../Layout/Layout";
-import "./WatchVideoPage.css";
+import "./watchVideoPage.css";
 
 type VideoType = {
   _id: string;
