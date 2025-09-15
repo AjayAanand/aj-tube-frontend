@@ -10,6 +10,11 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
+    const validEmail = /\S+@\S+\.\S+/.test(email);
+    if (!validEmail) {
+      alert("Please enter a valid email address.");
+      return;
+    }
     e.preventDefault();
     setIsLoading(true);
     try {
@@ -26,6 +31,7 @@ const Login = () => {
       }
     } catch (error) {
       console.error("Login failed:", error);
+      alert("Login failed. Please check your credentials and try again.");
     } finally {
       setIsLoading(false);
     }

@@ -10,7 +10,7 @@ type LayoutProps = {
 };
 
 type UserData = {
-  id: string;
+  _id: string;
   username: string;
   fullName: string;
   email: string;
@@ -92,7 +92,7 @@ const Layout = ({ children, sideBar }: LayoutProps) => {
             className="profile-pic"
             onClick={() => {
               if (userData) {
-                window.location.href = `/profile/${userData.id}`;
+                window.location.href = `/profile/${userData?._id}`;
               }
             }}
           />

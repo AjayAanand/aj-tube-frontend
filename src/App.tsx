@@ -7,6 +7,7 @@ import RegisterUser from './screen/auth/RegisterPage/registerUser';
 import ForgotPassword from './screen/auth/ForgotPasswordPage/forgotPassword';
 import UploadPage from './screen/others/uploadPage';
 import WatchVideoPage from './screen/others/watchVideoPage';
+import Profile from './screen/main/Profile/profile';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Route path="/register" element={<RegisterUser/>}/>
         <Route path='/forgot-password' element={<ForgotPassword/>} />
         <Route path='/upload' element={<UploadPage />} />
-        <Route path='/videos/:id' element={<WatchVideoPage />} /> 
+        <Route path='/videos/:id' element={<WatchVideoPage />} />
+        <Route path='/profile/:id' element={<Profile />} />
       </Routes>
     </BrowserRouter>
    </>

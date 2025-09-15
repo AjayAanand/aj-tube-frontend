@@ -34,7 +34,7 @@ export default function RegisterPage() {
       formData.append("username", form.username);
       formData.append("email", form.email);
       formData.append("password", form.password);
-      if (form.avatar) formData.append("avatar", form.avatar);
+      if (form.avatar) formData.append("avatar", form.avatar );
       if (form.coverImage) formData.append("coverImage", form.coverImage);
 
       const response = await axios.post(
@@ -42,13 +42,15 @@ export default function RegisterPage() {
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
-
-      console.log("Registration successful:", response.data);
-    } catch (error) {
-      console.error("Error during registration:", error);
-    } finally {
-      setIsLoading(false);
+      if (response.status === 201) {
+        setIsLoading(false);
       setRegisterComplete(true);
+      }else {
+        setIsLoading(false);
+        alert("Registration failed. Please try again.");
+      }
+    } catch (error) {
+      console.warn("Error during registration:", error);
     }
   };
 

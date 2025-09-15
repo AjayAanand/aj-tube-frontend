@@ -1,0 +1,169 @@
+.profile-container {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+.cover-photo {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.cover-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-photo .change-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #000000a6;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.profile-details {
+  display: flex;
+  align-items: flex-start;
+  margin-top: -100px; /* Pull profile pic upward */
+  flex-direction: row;
+}
+
+.profile-avatar {
+  position: relative;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.profile-avatar img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+}
+
+.profile-avatar .small-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #000000a6;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.profile-info {
+margin-top: 100px;
+margin-left: 30px;
+justify-items: start;
+}
+
+.profile-info h2 {
+  margin: 0px;
+  margin-bottom: -10px;
+  font-size: 33px;
+}
+
+.profile-info p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.followers {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* Tabs */
+.profile-tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 12px 20px;
+  margin: 0 5px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-btn:hover {
+  color: #000;
+  
+}
+
+.tab-btn.active {
+  color: #000;
+  border-bottom: 3px solid #000;
+  font-weight: bold;
+}
+
+.tab-btn {
+  outline: none;          /* remove blue border on focus */
+}
+
+.tab-btn:focus {
+  outline: none;          /* extra safe */
+  box-shadow: none;       /* remove shadow in some browsers */
+}
+/* Tab Content */
+.tab-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.tab-content h3 {
+  margin-bottom: 10px;
+}
+
+/* Video grid like YouTube */
+.video-grids {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* responsive columns */
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.video-cards {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border: 1px solid #ddd;
+}
+
+.video-cards:hover {
+  transform: scale(1.02);
+}
+
+.video-cards img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.video-cards h4 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 8px;
+  color: #111;
+}
