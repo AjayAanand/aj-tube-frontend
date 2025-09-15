@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Layout from "../../../Layout/Layout";
-import "./Profile.css";
+import "./profile.css";
 
 const Profile = () => {
   const api_url = import.meta.env.VITE_API_KEY;
